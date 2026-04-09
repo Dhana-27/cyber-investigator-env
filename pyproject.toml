@@ -1,28 +1,22 @@
-[build-system]
-requires = ["setuptools>=45", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "cyber-investigator-env"
-version = "1.0.0"
-description = "OpenEnv-compliant cybersecurity environment"
-readme = "README.md"
+version = "0.1.0"
+description = "Cyber Investigator OpenEnv"
+authors = [
+    { name = "Dhana" }
+]
 requires-python = ">=3.10"
-license = {text = "MIT"}
-authors = [{name = "Dhana-27", email = "172922438+Dhana-27@users.noreply.github.com"}]
 
 dependencies = [
-    "openenv-core>=0.1.0",
-    "fastapi>=0.104.0",
-    "uvicorn>=0.24.0",
-    "pydantic>=2.0.0",
-    "openai>=1.0.0",
-    "python-dotenv>=1.0.0",
-    "pyyaml>=6.0.0",
-    "requests>=2.31.0",
+    "openenv-core>=0.2.0",
+    "openai",
+    "python-dotenv"
 ]
 
-[project.urls]
-Homepage = "https://github.com/Dhana-27/cyber-investigator-env"
-Repository = "https://github.com/Dhana-27/cyber-investigator-env.git"
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 

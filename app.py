@@ -154,7 +154,17 @@ async def root():
     }
 
 
-if __name__ == "__main__":
+def main():
+    """Entry point for the FastAPI application."""
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    import os
+    
+    port = int(os.getenv("PORT", "7860"))
+    host = os.getenv("HOST", "0.0.0.0")
+    
+    uvicorn.run(app, host=host, port=port, log_level="info")
+
+
+if __name__ == "__main__":
+    main()
 
